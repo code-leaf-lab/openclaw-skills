@@ -1,0 +1,23 @@
+{
+  "name": "browser-search-download",
+  "version": "1.1.0",
+  "description": "Automates searching for data in web applications and downloading results to local storage with precise two-step date selection and specific download button identification",
+  "main": "implementation.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["browser", "automation", "download", "search", "web", "date-selection", "file-verification"],
+  "author": "OpenClaw AI Assistant",
+  "license": "MIT",
+  "openclaw": {
+    "skill": true,
+    "category": "browser-automation",
+    "agentId": "browser-search-download",
+    "permissions": {
+      "browser": "full",
+      "filesystem": "read",
+      "exec": "powershell",
+      "network": "target-domains"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "ip-info-recorder",
+  "version": "2.0.0",
+  "description": "Automates retrieving comprehensive public IP address information, capturing detailed system and network data, and logging everything in structured Markdown format to managed log directory. Always creates new unique Markdown log files with complete directory structure auto-creation.",
+  "main": "implementation.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["ip", "network", "logging", "browser", "automation", "screenshot", "unique-logs"],
+  "author": "OpenClaw AI Assistant",
+  "license": "MIT",
+  "openclaw": {
+    "skill": true,
+    "category": "network-monitoring",
+    "agentId": "ip-info-recorder",
+    "permissions": {
+      "browser": "full",
+      "filesystem": "read-write",
+      "exec": "powershell-cmd"
+    }
+  }
+}
