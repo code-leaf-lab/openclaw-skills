@@ -52,6 +52,8 @@ This skill requires the following permissions:
 - Execution status and workflow step details
 - All relevant metadata
 
+**Note**: 日志内容现在使用中文记录，包括所有标题、字段名称和描述。
+
 Each execution creates a completely new log file - **never appends to existing files**.
 
 ## Example Use Cases

@@ -190,15 +190,15 @@ class IpInfoRecorderSkill {
       return {
         operatingSystem: osInfo,
         currentUser: currentUser,
-        userAgent: 'Browser User Agent (captured during browser session)',
+        userAgent: '浏览器用户代理（在浏览器会话期间捕获）',
         timestamp: new Date().toISOString()
       };
     } catch (error) {
       console.error('Error getting system info:', error);
       return {
-        operatingSystem: 'Windows Unknown',
-        currentUser: 'Unknown User',
-        userAgent: 'Browser User Agent (captured during browser session)',
+        operatingSystem: 'Windows 未知',
+        currentUser: '未知用户',
+        userAgent: '浏览器用户代理（在浏览器会话期间捕获）',
         timestamp: new Date().toISOString()
       };
     }
@@ -225,68 +225,68 @@ class IpInfoRecorderSkill {
     const isoTimestamp = now.toISOString();
     
     // Build detailed Markdown content
-    let markdownContent = `# IP Information Recording
+    let markdownContent = `# IP 信息记录
 
 `;
-    markdownContent += `## Execution Details
+    markdownContent += `## 执行详情
 `;
-    markdownContent += `- **Recording Timestamp**: ${logTimestamp}
+    markdownContent += `- **记录时间戳**: ${logTimestamp}
 `;
-    markdownContent += `- **ISO Timestamp**: ${isoTimestamp}
+    markdownContent += `- **ISO 时间戳**: ${isoTimestamp}
 `;
-    markdownContent += `- **Status**: Success
+    markdownContent += `- **状态**: 成功
 `;
-    markdownContent += `- **Execution Steps**: Completed all 7 workflow steps successfully
-
-`;
-    
-    markdownContent += `## Network Information
-`;
-    markdownContent += `- **IP Address**: ${ipData.ipAddress}
-`;
-    markdownContent += `- **Hostname**: ${ipData.hostname}
-`;
-    markdownContent += `- **Organization/ISP**: ${ipData.org}
-`;
-    markdownContent += `- **Location**: ${ipData.city}, ${ipData.region}, ${ipData.country}
-`;
-    markdownContent += `- **Coordinates**: ${ipData.loc}
-`;
-    markdownContent += `- **Postal Code**: ${ipData.postal}
-`;
-    markdownContent += `- **Timezone**: ${ipData.timezone}
+    markdownContent += `- **执行步骤**: 成功完成所有 7 个工作流程步骤
 
 `;
     
-    markdownContent += `## System Information
+    markdownContent += `## 网络信息
 `;
-    markdownContent += `- **Operating System**: ${ipData.systemInfo.operatingSystem}
+    markdownContent += `- **IP 地址**: ${ipData.ipAddress}
 `;
-    markdownContent += `- **Current User**: ${ipData.systemInfo.currentUser}
+    markdownContent += `- **主机名**: ${ipData.hostname}
 `;
-    markdownContent += `- **Browser**: User Profile Browser (authenticated session)
+    markdownContent += `- **组织/ISP**: ${ipData.org}
 `;
-    markdownContent += `- **User Agent**: ${ipData.systemInfo.userAgent}
+    markdownContent += `- **位置**: ${ipData.city}, ${ipData.region}, ${ipData.country}
+`;
+    markdownContent += `- **坐标**: ${ipData.loc}
+`;
+    markdownContent += `- **邮政编码**: ${ipData.postal}
+`;
+    markdownContent += `- **时区**: ${ipData.timezone}
 
 `;
     
-    markdownContent += `## Metadata
+    markdownContent += `## 系统信息
 `;
-    markdownContent += `- **Log File**: ${fileName}
+    markdownContent += `- **操作系统**: ${ipData.systemInfo.operatingSystem}
 `;
-    markdownContent += `- **Log Directory**: ${this.logDirectory}
+    markdownContent += `- **当前用户**: ${ipData.systemInfo.currentUser}
 `;
-    markdownContent += `- **IP Service Used**: https://ipinfo.io/json
+    markdownContent += `- **浏览器**: 用户配置文件浏览器（已认证会话）
 `;
-    markdownContent += `- **Data Source**: ipinfo.io API
-`;
-    markdownContent += `- **Recording Method**: Automated browser capture
+    markdownContent += `- **用户代理**: ${ipData.systemInfo.userAgent}
 
 `;
     
-    markdownContent += `## Raw Data
+    markdownContent += `## 元数据
 `;
-    markdownContent += `Raw API response captured during execution.`;
+    markdownContent += `- **日志文件**: ${fileName}
+`;
+    markdownContent += `- **日志目录**: ${this.logDirectory}
+`;
+    markdownContent += `- **使用的 IP 服务**: https://ipinfo.io/json
+`;
+    markdownContent += `- **数据源**: ipinfo.io API
+`;
+    markdownContent += `- **记录方法**: 自动化浏览器捕获
+
+`;
+    
+    markdownContent += `## 原始数据
+`;
+    markdownContent += `执行期间捕获的原始 API 响应。`;
     
     // Ensure log directory exists (complete directory structure)
     await this.ensureLogDirectory();
