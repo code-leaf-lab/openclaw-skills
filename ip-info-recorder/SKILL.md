@@ -34,7 +34,6 @@ sessions_spawn(
 4. **Extract IP Data**: Parse IP address from webpage content
 5. **Create New Log Entry**: **Always create a new log file** with unique timestamp name: `ip_log_YYYYMMDD_HHMMSS.txt`
 6. **Manage Log Files**: Remove oldest files beyond 10-file limit
-7. **Cleanup**: Close browser tab and release resources
 
 ## Required Permissions
 This skill requires the following permissions:
